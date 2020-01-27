@@ -1,5 +1,8 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{!-- {{#let (my-records 'myParent') as |bar|}}
+  {{bar}}
+{{/let}} --}}
+<MyRecordsComponent @modelName="myParent" as |records|>
+  {{#each (await records) as |record|}}
+    {{record.id}}
+  {{/each}}
+</MyRecordsComponent>

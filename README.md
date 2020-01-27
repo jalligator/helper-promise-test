@@ -1,6 +1,12 @@
 # helper-promise-test
 
-This is an example of a helper that returns a "findAll" request from the store that causes an infinite recursion
+This is an example of a helper that returns a "findAll" request from the store that causes an infinite recursion.
+
+The application.hbs has the helper syntax commented out. If you restore this, you will get the error.
+Also, the component version needs to have the getter field marked as a computed field with no dependencies or else it will get
+called over and over too.
+
+I think something happens to store during a fetch that is causing the component or helper to be rerendered or recomputed
 
 ## Prerequisites
 
