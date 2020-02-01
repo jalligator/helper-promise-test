@@ -1,6 +1,15 @@
-{{!-- {{#let (my-records 'myParent') as |bar|}}
+<h1>Demo of store service maximum call stack exceeded after findAll</h1>
+
+<p style="color:red">Make sure you empty your local storage!</p>
+
+{{!-- Neither of these work --}}
+{{!-- {{#let (my-records-2 'myParent') as |bar|}}
+  {{bar}}
+{{/let}}
+{{#let (my-records 'myParent') as |bar|}}
   {{bar}}
 {{/let}} --}}
+
 <MyRecordsComponent @modelName="myParent" as |records|>
   {{#each (await records) as |record|}}
     {{record.id}}
